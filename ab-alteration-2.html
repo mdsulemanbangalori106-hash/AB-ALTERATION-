@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB Alteration - Professional Clothing Alteration & Custom Tailoring | Hubballi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #d4af37;
+            --accent-color: #ffffff;
+            --light-bg: #f5f5f5;
+            --text-dark: #2a2a2a;
+            --text-light: #666666;
+            --gold-light: #e8d4a8;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--accent-color);
+            overflow-x: hidden;
+        }
+
+        /* ============== ANIMATIONS ============== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        /* ============== NAVBAR ============== */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            color: var(--primary-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-container {
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* ============== HERO SECTION ============== */
+        .hero {
+            margin-top: 70px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23333;stop-opacity:1" /><stop offset="100%" style="stop-color:%231a1a1a;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%23d4af37" opacity="0.05"/><circle cx="1000" cy="500" r="120" fill="%23d4af37" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            animation: fadeInUp 1s ease-out 0.4s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ============== FLOATING WHATSAPP BUTTON ============== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            animation: fadeInUp 0.8s ease-out 1s both, pulse 2s infinite 1.5s;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition-smooth);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ============== ABOUT SECTION ============== */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--gold-light));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        #about {
+            background: linear-gradient(135deg, var(--accent-color), var(--light-bg));
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            animation: slideInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--secondary-color);
+        }
+
+        .about-image {
+            position: relative;
+            animation: slideInRight 0.8s ease-out 0.3s both;
+            height: 400px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '✨';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .about-image svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============== SERVICES SECTION ============== */
+        #services {
+            background: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.1));
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        /* ============== WHY CHOOSE US SECTION ============== */
+        #why-us {
+            background: linear-gradient(135deg, var(--light-bg), var(--accent-color));
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-us-card {
+            background: var(--accent-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition-smooth);
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            animation: slideInLeft 0.8s ease-out both;
+        }
+
+        .why-us-card:nth-child(1) { animation-delay: 0.1s; }
+        .why-us-card:nth-child(2) { animation-delay: 0.2s; }
+        .why-us-card:nth-child(3) { animation-delay: 0.3s; }
+        .why-us-card:nth-child(4) { animation-delay: 0.4s; }
+        .why-us-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .why-us-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .why-us-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .why-us-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .why-us-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ============== LOCATION SECTION ============== */
+        #location {
+            background: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .location-info {
+            animation: slideInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .location-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .location-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .location-item:last-child {
+            border-bottom: none;
+        }
+
+        .location-item strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-item a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .location-item a:hover {
+            color: var(--secondary-color);
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            animation: slideInRight 0.8s ease-out 0.3s both;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .get-directions-btn {
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* ============== CONTACT SECTION ============== */
+        #contact {
+            background: linear-gradient(135deg, var(--light-bg), var(--accent-color));
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: slideInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .contact-btn {
+            padding: 1.2rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-btn-call {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+        }
+
+        .contact-btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4);
+        }
+
+        .contact-btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #20ba58);
+            color: white;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.2);
+        }
+
+        .contact-btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-form {
+            animation: slideInRight 0.8s ease-out 0.3s both;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold-light));
+            color: var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============== FOOTER ============== */
+        footer {
+            background: var(--primary-color);
+            color: var(--accent-color);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer strong {
+            color: var(--secondary-color);
+        }
+
+        /* ============== SCROLL ANIMATIONS ============== */
+        .observe {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .observe.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============== RESPONSIVE ============== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .contact-btn {
+                flex: 1;
+                min-width: 200px;
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .service-card,
+            .why-us-card {
+                padding: 1.5rem;
+            }
+
+            .contact-btn {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== NAVIGATION ============== -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">AB Alteration</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Book Now</button>
+    </div>
+</nav>
+
+<!-- ============== HERO SECTION ============== -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Perfect Fit. Perfect Style.</h1>
+        <p>Professional Clothing Alteration & Custom Tailoring in Hubballi</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Book Now</button>
+            <a href="https://wa.me/917899283178" target="_blank" class="btn btn-secondary">WhatsApp Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FLOATING WHATSAPP BUTTON ============== -->
+<a href="https://wa.me/917899283178" target="_blank" class="whatsapp-float">
+    💬
+</a>
+
+<!-- ============== ABOUT SECTION ============== -->
+<section id="about">
+    <div class="container observe">
+        <h2 class="section-title">About AB Alteration</h2>
+        <p class="section-subtitle">Crafting Perfect Fits Since Day One</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to <strong>AB Alteration</strong>, your trusted partner for professional clothing alterations and custom tailoring in Hubballi. With years of expertise and a team of dedicated master tailors, we transform your favorite garments into perfect-fitting pieces.</p>
+                <p>Whether you need simple hemming or intricate bridal alterations, our commitment to quality and attention to detail ensures every piece is handled with care. We use premium materials and techniques to deliver results that exceed expectations.</p>
+                <p>From dress alterations to custom stitching, we're here to make you look and feel your absolute best. <strong>Your style, our expertise – the perfect combination!</strong></p>
+            </div>
+            <div class="about-image">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fff;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.2" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="95" fill="url(#gradient1)"/>
+                    <path d="M 100 40 L 130 80 L 170 80 L 140 110 L 155 150 L 100 120 L 45 150 L 60 110 L 30 80 L 70 80 Z" fill="#d4af37" opacity="0.3"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== SERVICES SECTION ============== -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Expert Solutions for All Your Tailoring Needs</p>
+        <div class="services-grid">
+            <div class="service-card observe">
+                <div class="service-icon">👗</div>
+                <h3>Dress Alteration</h3>
+                <p>Perfect hemming, resizing, and alterations for dresses of all types and fabrics.</p>
+            </div>
+            <div class="service-card observe">
+                <div class="service-icon">✨</div>
+                <h3>Blouse & Lehenga Fitting</h3>
+                <p>Custom fitting and adjustments for traditional Indian wear including blouses and lehengas.</p>
+            </div>
+            <div class="service-card observe">
+                <div class="service-icon">👔</div>
+                <h3>Pant & Shirt Alteration</h3>
+                <p>Professional tailoring for trousers and shirts with precision hemming and adjustments.</p>
+            </div>
+            <div class="service-card observe">
+                <div class="service-icon">💍</div>
+                <h3>Bridal Alterations</h3>
+                <p>Specialized care for wedding dresses with intricate detailing and perfect fit guarantees.</p>
+            </div>
+            <div class="service-card observe">
+                <div class="service-icon">🧵</div>
+                <h3>Custom Stitching</h3>
+                <p>Design and create custom garments tailored to your unique style and measurements.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== WHY CHOOSE US SECTION ============== -->
+<section id="why-us">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle">Quality, Reliability, and Excellence in Every Stitch</p>
+        <div class="why-us-grid">
+            <div class="why-us-card observe">
+                <div class="why-us-icon">⚡</div>
+                <h3>Fast Delivery</h3>
+                <p>Quick turnaround times without compromising on quality or attention to detail.</p>
+            </div>
+            <div class="why-us-card observe">
+                <div class="why-us-icon">✅</div>
+                <h3>Perfect Fitting Guarantee</h3>
+                <p>We ensure every garment fits perfectly, or we'll adjust it free of charge.</p>
+            </div>
+            <div class="why-us-card observe">
+                <div class="why-us-icon">💰</div>
+                <h3>Affordable Pricing</h3>
+                <p>Premium quality services at competitive rates that won't break your budget.</p>
+            </div>
+            <div class="why-us-card observe">
+                <div class="why-us-icon">👨‍🎓</div>
+                <h3>Experienced Tailors</h3>
+                <p>Team of master tailors with years of expertise in all types of alterations.</p>
+            </div>
+            <div class="why-us-card observe">
+                <div class="why-us-icon">🌟</div>
+                <h3>Premium Finishing</h3>
+                <p>Meticulous attention to detail ensures every piece looks professionally finished.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== LOCATION SECTION ============== -->
+<section id="location">
+    <div class="container">
+        <h2 class="section-title">Find Us</h2>
+        <p class="section-subtitle">Visit Our Store in Hubballi</p>
+        <div class="location-content">
+            <div class="location-info">
+                <h3>📍 Our Location</h3>
+                <div class="location-item">
+                    <strong>Address</strong>
+                    <p>Centum Mall V2 Basement<br>Gokul Road, Hubballi – 580030<br>Karnataka, India</p>
+                </div>
+                <div class="location-item">
+                    <strong>Call Us</strong>
+                    <p><a href="tel:+917899204317">+91 7899204317</a></p>
+                </div>
+                <div class="location-item">
+                    <strong>WhatsApp</strong>
+                    <p><a href="https://wa.me/917899283178">+91 7899283178</a></p>
+                </div>
+                <a href="https://maps.google.com/maps?q=AB+Alteration+Centum+Mall+Hubballi" target="_blank" class="btn btn-primary get-directions-btn">Get Directions</a>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3816.7436328282166!2d75.33604122346181!3d15.360590485138626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb88e4b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sCentum%20Mall%20V2%2C%20Hubballi!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== CONTACT SECTION ============== -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have Questions? We're Here to Help</p>
+        <div class="contact-content">
+            <div class="contact-buttons">
+                <a href="tel:+917899204317" class="contact-btn contact-btn-call">
+                    <span>📞</span> Call Us: +91 7899204317
+                </a>
+                <a href="https://wa.me/917899283178" target="_blank" class="contact-btn contact-btn-whatsapp">
+                    <span>💬</span> WhatsApp: +91 7899283178
+                </a>
+            </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your tailoring needs..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+    <p><strong>AB Alteration</strong></p>
+    <p>Centum Mall V2 Basement, Gokul Road, Hubballi – 580030</p>
+    <p>📞 +91 7899204317 | 💬 WhatsApp: +91 7899283178</p>
+    <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.2);">© 2026 AB Alteration. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Smooth scrolling for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.observe').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Form submission
+    function handleSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        // WhatsApp Message
+        const whatsappMessage = `Hello AB Alteration,%0A%0AName: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+        window.open(`https://wa.me/917899283178?text=${whatsappMessage}`, '_blank');
+
+        // Reset form
+        document.querySelector('.contact-form').reset();
+    }
+
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.boxShadow = '0 2px 20px rgba(212, 175, 55, 0.1)';
+        } else {
+            nav.style.boxShadow = 'none';
+        }
+    });
+
+    // Page load animation
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '1';
+    });
+</script>
+
+</body>
+</html>
